@@ -1,21 +1,22 @@
 (ns ^:figwheel-always
   jot.core
-  (:require
-   [reagent.core :as reagent :refer [atom]]))
+  (:require [reagent.core       :as reagent]
+            [jot.components.nav :as nav]))
 
 (enable-console-print!)
 
-(println "Edits to this text should show up in your developer console.")
+(defonce app-state
+  (reagent/atom {}))
 
-;; define your app data so that it doesn't get over-written on reload
+(defn app-root []
+  []
+  [:div (nav/self)
+   "the rest of the app will go here"])
 
-(defonce app-state (atom {:text "Hello world!"}))
 
-(defn hello-world []
-  [:h1 (:text @app-state)])
-
-(reagent/render-component [hello-world]
-                          (. js/document (getElementById "app")))
+(reagent/render-component
+ [app-root]
+ (. js/document (getElementById "app")))
 
 
 (defn on-js-reload []
