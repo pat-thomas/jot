@@ -1,6 +1,7 @@
-(ns ^:figwheel-always jot.core
-    (:require
-              [reagent.core :as reagent :refer [atom]]))
+(ns ^:figwheel-always
+  jot.core
+  (:require
+   [reagent.core :as reagent :refer [atom]]))
 
 (enable-console-print!)
 
