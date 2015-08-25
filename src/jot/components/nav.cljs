@@ -4,4 +4,7 @@
 (defn self
   []
   [:div#nav
-   "navigation will go here"])
+   (for [{:keys [href text] :as item} [{:href "/sign-out" :text "Sign Out"}
+                                       {:href "/home" :text "Home"}]]
+     [:a {:href href
+          :text text}])])
