@@ -14,7 +14,6 @@
    [:div (nav/self)]
    [:div "the rest of the app will go here"]])
 
-
 (defn main
   []
   (reagent/render-component
